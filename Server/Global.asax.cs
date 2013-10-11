@@ -7,6 +7,7 @@ using System.Web.SessionState;
 using ServiceStack.ServiceHost;
 using ServiceStack.WebHost.Endpoints;
 using Funq;
+using ServiceStack.Razor;
 
 namespace SimpleServiceStack
 {
@@ -26,6 +27,7 @@ namespace SimpleServiceStack
             /// <param name="container">The built-in IoC used with ServiceStack.</param>
             public override void Configure(Container container)
             {
+                Plugins.Add(new RazorFormat());
                 //Register user-defined REST-ful urls. You can access the service at the url similar to the following.
                 //http://localhost/ServiceStack.Hello/servicestack/hello or http://localhost/ServiceStack.Hello/servicestack/hello/John%20Doe
                 //You can change /servicestack/ to a custom path in the web.config.
