@@ -149,3 +149,6 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+#ignore the symlinked client folder in src/Server
+src/Server/client/
