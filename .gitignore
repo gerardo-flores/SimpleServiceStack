@@ -93,7 +93,6 @@ DocProject/Help/html
 publish/
 
 # Publish Web Output
-*.Publish.xml
 *.pubxml
 
 # NuGet Packages Directory
@@ -115,7 +114,6 @@ ClientBin/
 ~$*
 *~
 *.dbmdl
-*.[Pp]ublish.xml
 *.pfx
 *.publishsettings
 
@@ -151,4 +149,4 @@ $RECYCLE.BIN/
 .DS_Store
 
 #ignore the symlinked client folder in src/Server
-src/Server/client/
+Server/client/
