@@ -8,6 +8,8 @@ using ServiceStack.CacheAccess;
 using ServiceStack.CacheAccess.Providers;
 using ServiceStack.Logging;
 using ServiceStack.Logging.NLogger;
+using PetaPoco;
+using System;
 
 namespace SimpleServiceStack
 {
@@ -33,12 +35,12 @@ namespace SimpleServiceStack
             //loading Razor plugin to load the client/index.html file as the main file
             Plugins.Add(new RazorFormat());
 
-            container.Register<IDbConnectionFactory>(new OrmLiteConnectionFactory("sqlServer", SqlServerDialect.Provider));
+            container.Register<Database>(new Database("sqlServer"));
 
             //The MemoryCacheClient is a great way to get started with caching; nothing external to setup.
             container.Register<ICacheClient>(c => new MemoryCacheClient());
 
-            logger.Info("The AppHost has been parsed and started");
+            logger.InfoFormat("AppHost Configured: {0}", DateTime.Now);
         }
     }
 }
